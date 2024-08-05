@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SimSimi - 2213020120</title>
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src='js/responsivevoice.js'></script>
+</head>
+
+<body background="img/wallpaper.jpg">
+	<script>
+		navigator.mediaDevices.getUserMedia({ audio: true })
+			.then(function (stream) {
+				console.log('You let me use your mic!')
+			})
+			.catch(function (err) {
+				console.log('No mic for you!')
+			});
+	</script>
+	<nav class="navbar navbar-custom">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/">SimSimi</a>
+			<li class="nav-item dropdown d-flex">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+					aria-expanded="false">
+					Language
+				</a>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="/ind">Indonesia</a></li>
+					<li><a class="dropdown-item" href="/eng">English</a></li>
+				</ul>
+			</li>
+		</div>
+	</nav>
+	<div class="simi">
+		<div class="talk-bubble tri-right brdr round btm-left-in yellow">
+			<div class="talktext sim">
+				<p>
+					<%=hasil%>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<img src="img/simi.png" alt="" class="updown">
+	<div class="user">
+		<div class="talk-bubble tri-right round brdr right-top">
+			<div class="talktext me">
+				<p id="me">
+					<%=inputan%>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<form class="conversation-form" id="conversation-form" method="post" action="/submiten">
+		<div class="conversation-form-group">
+			<input type="text" autocomplete="off" name="question" class="conversation-form-input"
+				id="conversation-form-input" rows="1" placeholder="Type Here...">
+		</div>
+		<button type="submit" id="conversation-form-button" class="conversation-form-button conversation-form-submit"><i
+				class="ri-send-plane-2-line"></i></button>
+	</form>
+	<button type="button" onclick="runSpeechRecognitionEN()"
+		class="conversation-form-record conversation-form-submit"><i class="ri-mic-line"></i></button>
+
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>

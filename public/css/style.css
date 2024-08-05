@@ -1,0 +1,382 @@
+/* General CSS Setup */
+body {
+    font-family: "Ubuntu-Italic", "Lucida Sans", helvetica, sans;
+    height: 100vh;
+}
+
+/* container */
+.container {
+    padding: 5% 5%;
+}
+
+/* CSS talk bubble */
+.talk-bubble {
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-bottom: 0px;
+    margin-right: 50px;
+    display: inline-block;
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color: lightyellow;
+}
+
+.yellow {
+    background-color: #FFE34F;
+}
+
+.simi {
+    display: flex;
+}
+
+.user {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.brdr {
+    border: 8px solid black;
+}
+
+.round {
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+
+}
+
+/*Right triangle, placed bottom left side slightly in*/
+.tri-right.brdr.btm-left-in:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 30px;
+    right: auto;
+    top: auto;
+    bottom: -40px;
+    border: 20px solid;
+    border-color: black transparent transparent black;
+}
+
+.tri-right.btm-left-in:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 38px;
+    right: auto;
+    top: auto;
+    bottom: -20px;
+    border: 12px solid;
+    border-color: #FFE34F transparent transparent #FFE34F;
+}
+
+
+/* Right triangle placed top right flush. */
+.tri-right.brdr.right-top:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    right: -40px;
+    top: -8px;
+    bottom: auto;
+    border: 32px solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tri-right.right-top:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    right: -20px;
+    top: 0px;
+    bottom: auto;
+    border: 20px solid;
+    border-color: lightyellow transparent transparent transparent;
+}
+
+/* talk bubble contents */
+.sim {
+    padding: 1em 2em;
+    text-align: left;
+    line-height: 1.5em;
+    margin: auto;
+}
+
+.me {
+    padding: 1em 2em;
+    text-align: right;
+    line-height: 1.5em;
+    margin: auto;
+}
+
+.talktext p {
+    /* remove webkit p margins */
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    font-size: 1.5rem;
+}
+
+img {
+    width: 20vw;
+    margin: 0 20px;
+}
+
+.navbar-custom {
+    background-color: #FFE34F;
+    border-bottom: 2px solid black;
+}
+
+#msg_send {
+    outline: none;
+    font-size: 20px;
+    padding: 0 16px;
+    border-radius: 32px 0 32px 32px;
+    background: #ececee;
+    color: #333;
+    border: solid 1px #777;
+    border-right: none;
+}
+
+.input {
+    height: 7%;
+    background: linear-gradient(#ececee 50%, #FFE34F 50%);
+    display: grid;
+    grid-template-columns: 70% 30%;
+    border-radius: 32px;
+    margin: 8px 16px;
+    min-height: 42px;
+    width: 80vw;
+    box-shadow: inset 0 1px 0 #777;
+    position: fixed;
+    bottom: 0;
+}
+
+.send {
+    outline: none;
+    font-size: 20px;
+    border: none;
+    background: #FFE34F;
+    border-radius: 32px;
+    color: black;
+    transition-duration: 0.2s;
+}
+
+.send:active {
+    font-size: 16px;
+}
+
+.mic {
+    width: 30px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.conversation-form {
+    padding: 8px 16px;
+    background-color: none;
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 0;
+    width: 95vw;
+
+}
+
+.conversation-form-group {
+    width: 100%;
+    position: relative;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.conversation-form-input {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    outline: transparent;
+    padding: 10px 32px 10px 16px;
+    font: inherit;
+    font-size: 14px;
+    resize: none;
+    width: 100%;
+    display: block;
+    line-height: 1.5;
+    max-height: calc(20px + ((14px * 2) * 6));
+}
+
+.conversation-form-input:focus {
+    border-color: grey;
+}
+
+.conversation-form-record {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: none;
+    background-color: transparent;
+    outline: transparent;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: fixed;
+    bottom: 8px;
+    right: 30px;
+    width: 3vw;
+}
+
+.conversation-form-record:hover {
+    background-color: #FFE34F;
+    color: grey;
+}
+
+.conversation-form-record:active {
+    background-color: #FFE34F;
+    color: grey;
+}
+
+.conversation-form-button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: none;
+    background-color: transparent;
+    outline: transparent;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.conversation-form-button:hover {
+    background-color: #FFE34F;
+    color: grey;
+}
+
+.conversation-form-button:active {
+    background-color: #FFE34F;
+    color: grey;
+}
+
+.conversation-form-submit {
+    background-color: #FFE34F;
+    box-shadow: 0 2px 8px -2px black;
+    color: black;
+    border: 1px solid black;
+}
+
+.conversation-form-submit:hover {
+    background-color: black;
+    color: #FFE34F;
+}
+
+.conversation-form-submit:active {
+    background-color: black;
+    color: #FFE34F;
+}
+
+
+.updown {
+    animation-name: upanddown;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    transition: all .3s;
+}
+
+.menu {
+    width: 26vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    text-align: center;
+}
+
+.pil {
+    width: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vh;
+}
+
+.pil-item {
+    background-color: #FFE34F;
+    box-shadow: 0 2px 8px -2px black;
+    color: black;
+    border: 1px solid black;
+    width: fit-content;
+    height: fit-content;
+    padding: 8px;
+    font-size: 1.5rem;
+}
+
+.pil-item:hover {
+    background-color: black;
+    color: #FFE34F;
+}
+
+@keyframes upanddown {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    img {
+        width: 40vw;
+        margin: 0 20px;
+        margin-top: 30px;
+    }
+
+    .menu {
+        width: 50vw;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 7vh;
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        img {
+            width: 30vw;
+            margin: 0 20px;
+            margin-top: 30px;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        img {
+            width: 30vw;
+            margin: 0 20px;
+            margin-top: 30px;
+        }
+    }
+}
