@@ -1,13 +1,13 @@
 {
-  "name": "projectuas",
+  "name": "simple-simsimi",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Aplikasi chatting sederhana berinteraksi dengan bot SimSimi, dilengkapi dengan fitur voice chat untuk percakapan yang lebih menyenangkan",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ilham Khefi Ramadhanu | @ilham_rmdhanu",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
